@@ -2,296 +2,334 @@
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
-<title>Inter GeoEnergy AG</title>
+<title>CDB Resort</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Carlito:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
 <style>
-/* Layout: ein Schnitt durch die Halde – Navy-Kopf mit Luftbild, darunter helle, ruhige Bänder; Gold nur dort, wo vom Metall die Rede ist */
+/* Layout: ein dunkler Abendhimmel über dem Schloss — Vollbild-Bilder, schmale Textspalten, Gold nur für Linien, Ziffern und Namen */
 :root{
-  --navy:#0e2240; --navy-2:#17335c; --eis:#e8f0f8; --eis-2:#cfdff0;
-  --grund:#f7fafd; --flaeche:#ffffff; --text:#14263f; --leise:#4f6480;
-  --linie:#c5d4e6; --gold:#a8822c; --auf-navy:#eef4fb; --auf-navy-leise:#b7c9df;
-  --display:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
-  --body:Carlito,Calibri,"Segoe UI",Helvetica,Arial,sans-serif;
+  --nacht:#0b1424;
+  --nacht-2:#111d33;
+  --nebel:#1a2b47;
+  --elfenbein:#f3ecdc;
+  --sand:#c9bda2;
+  --gold:#d4b36a;
+  --gold-tief:#a3833f;
+  --linie:rgba(212,179,106,.35);
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --text:"Jost","Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --navy:#081629; --navy-2:#10294b; --eis:#13233b; --eis-2:#1c3353;
-  --grund:#0b1626; --flaeche:#111f34; --text:#e6eef8; --leise:#9fb3cc;
-  --linie:#28405f; --gold:#d6b25e; --auf-navy:#eef4fb; --auf-navy-leise:#b7c9df; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --navy:#081629; --navy-2:#10294b; --eis:#13233b; --eis-2:#1c3353;
-  --grund:#0b1626; --flaeche:#111f34; --text:#e6eef8; --leise:#9fb3cc;
-  --linie:#28405f; --gold:#d6b25e; --auf-navy:#eef4fb; --auf-navy-leise:#b7c9df; color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--grund);color:var(--text);font-family:var(--body);font-size:1.12rem;line-height:1.55}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+body{margin:0;background:var(--nacht);color:var(--elfenbein);font-family:var(--text);font-weight:300;font-size:1.05rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+img,video{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;margin:0;text-wrap:balance}
 p{margin:0}
-img{display:block;max-width:100%}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.wrap{width:min(1080px,100%);margin-inline:auto;padding-inline:20px}
-.label{font-family:var(--display);font-weight:500;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-html[data-lang="de"] .en,html[data-lang="en"] .de{display:none}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+.label{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:400}
+.schmal{max-width:36rem}
 
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--navy);color:var(--auf-navy);border-bottom:1px solid var(--navy-2)}
-.kopf{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.7rem}
-.marke{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
-.marke small{display:block;font-weight:500;font-size:.62rem;letter-spacing:.22em;color:var(--auf-navy-leise)}
-.rechts{display:flex;align-items:center;gap:1.3rem}
-nav{display:flex;gap:1.3rem}
-nav a{text-decoration:none;font-family:var(--display);font-weight:500;font-size:.92rem;letter-spacing:.1em;text-transform:uppercase;color:var(--auf-navy-leise)}
-nav a:hover{color:var(--auf-navy)}
-@media(max-width:820px){nav{display:none}}
-.sprache{display:flex;border:1px solid var(--auf-navy-leise);border-radius:2px;overflow:hidden}
-.sprache button{font:500 .85rem var(--display);letter-spacing:.1em;background:none;border:0;color:var(--auf-navy-leise);padding:.4rem .7rem;cursor:pointer}
-.sprache button[aria-pressed="true"]{background:var(--auf-navy);color:var(--navy)}
+/* Kopfzeile */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:linear-gradient(180deg,rgba(11,20,36,.95),rgba(11,20,36,.75));backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,179,106,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
+.marke{font-family:var(--display);font-size:1.35rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:var(--elfenbein);display:flex;align-items:baseline;gap:.7rem}
+.marke small{font-family:var(--text);font-size:.62rem;letter-spacing:.3em;color:var(--sand);font-weight:300}
+nav{display:flex;gap:1.6rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--sand);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+nav a:hover{color:var(--gold)}
+@media(max-width:640px){nav{display:none}}
 
-.hero{position:relative;isolation:isolate;background:var(--navy);color:var(--auf-navy);overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,22,41,.55),rgba(8,22,41,.9))}
-.hero .wrap{padding-block:4.5rem 3rem;display:grid;gap:1.3rem}
-.hero .label{color:#e2c478}
-.hero h1{font-size:clamp(2.3rem,6.4vw,4.3rem);max-width:17ch}
-.hero .lead{max-width:38rem;font-size:1.25rem;color:var(--auf-navy)}
-.fakten{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.2rem 2rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(238,244,251,.3)}
-.fakten div{min-width:0}
-.fakten b{display:block;font-family:var(--display);font-weight:600;font-size:1.9rem;line-height:1.1}
-.fakten span{font-size:.98rem;color:var(--auf-navy-leise)}
+/* Hero */
+.hero{position:relative;isolation:isolate;min-height:min(86vh,760px);display:grid;align-items:end;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;animation:fahrt 28s ease-out forwards}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,20,36,.25) 0%,rgba(11,20,36,.1) 40%,rgba(11,20,36,.92) 100%)}
+@keyframes fahrt{from{transform:scale(1.06)}to{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.hero img{animation:none}}
+.hero .wrap{padding-block:4rem 3.2rem;display:grid;gap:1.2rem}
+.hero h1{font-size:clamp(2.6rem,7vw,5.4rem);font-weight:400;letter-spacing:.01em;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .drei{font-family:var(--display);font-size:clamp(1.25rem,2.6vw,1.7rem);font-style:italic;color:var(--sand);letter-spacing:.02em}
+.hero .ort{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sand)}
+.hero .ort span::before{content:"";display:inline-block;width:1.4rem;height:1px;background:var(--gold);vertical-align:middle;margin-right:.7rem}
 
-section{padding-block:4rem}
-.band{background:var(--eis)}
-.titel{display:grid;gap:.6rem;margin-bottom:2.2rem}
-.titel h2{font-size:clamp(1.8rem,4.2vw,2.7rem)}
-.titel p{max-width:40rem;color:var(--leise)}
+/* Sektionen */
+section{padding-block:5.5rem}
+.kopf{display:grid;gap:.9rem;margin-bottom:2.6rem}
+.kopf h2{font-size:clamp(2rem,4.6vw,3.3rem)}
+.kopf .lead{max-width:42rem;font-size:1.15rem;color:var(--sand)}
+.trenner{height:1px;background:linear-gradient(90deg,transparent,var(--linie),transparent)}
 
-.kreislauf{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem;counter-reset:s}
-.kreislauf li{list-style:none;min-width:0;display:grid;gap:.5rem;align-content:start;padding-top:1rem;border-top:3px solid var(--navy-2);counter-increment:s}
-.kreislauf li::before{content:counter(s);font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--gold)}
-.kreislauf h3{font-size:1.45rem}
-.kreislauf p{color:var(--leise)}
-ol.kreislauf{margin:0;padding:0}
+/* Drei Säulen */
+.saeulen{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2.2rem 3rem}
+.saeule{display:grid;gap:.8rem;align-content:start;padding-top:1.3rem;border-top:1px solid var(--linie);min-width:0}
+.saeule .num{font-family:var(--display);font-style:italic;font-size:2.2rem;color:var(--gold);line-height:1}
+.saeule h3{font-size:1.65rem}
+.saeule p{color:var(--sand)}
 
-.projekt{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:start}
-.projekt>*{min-width:0}
-@media(max-width:800px){.projekt{grid-template-columns:1fr}}
-.projekt h3{font-size:1.7rem;margin-bottom:.7rem}
-.projekt .text{display:grid;gap:1rem}
-.projekt figure{margin:0}
-.projekt figcaption,.bildzeile figcaption{font-size:.9rem;color:var(--leise);margin-top:.45rem}
-dl{margin:0;display:grid;gap:0;border-top:1px solid var(--linie)}
-dl div{display:grid;grid-template-columns:11rem 1fr;gap:1rem;padding:.65rem 0;border-bottom:1px solid var(--linie)}
-dt{font-family:var(--display);font-weight:500;letter-spacing:.04em;color:var(--leise)}
-dd{margin:0;min-width:0}
-@media(max-width:520px){dl div{grid-template-columns:1fr;gap:.1rem}}
-.kette{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0}
-.kette li{list-style:none;font-family:var(--display);font-weight:500;font-size:.98rem;letter-spacing:.04em;padding:.35rem .75rem;background:var(--flaeche);border:1px solid var(--linie)}
-.kette li:last-child{border-color:var(--gold);color:var(--gold)}
-.tab{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
-th,td{text-align:left;padding:.5rem .8rem .5rem 0;border-bottom:1px solid var(--linie)}
-th{font-family:var(--display);font-weight:500;color:var(--leise);font-size:.95rem}
-.hinweis{font-size:.95rem;color:var(--leise);border-left:3px solid var(--gold);padding-left:.9rem}
-.weitere{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:2rem;margin-top:3rem}
-.weitere article{min-width:0;display:grid;gap:.5rem;align-content:start;padding-top:1rem;border-top:1px solid var(--linie)}
-.weitere h3{font-size:1.4rem}
-.weitere p{color:var(--leise)}
-.status{font-family:var(--display);font-weight:500;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+/* Schloss-Galerie */
+.galerie{display:grid;grid-template-columns:repeat(12,1fr);gap:.9rem}
+.galerie figure{margin:0;position:relative;overflow:hidden;min-width:0;background:var(--nacht-2)}
+.galerie img{width:100%;height:100%;object-fit:cover;aspect-ratio:21/9;transition:transform .9s ease}
+.galerie figure:hover img{transform:scale(1.03)}
+.galerie figcaption{position:absolute;left:1rem;bottom:.9rem;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--elfenbein);text-shadow:0 1px 12px rgba(0,0,0,.8)}
+.g1{grid-column:span 12}
+.g2,.g3{grid-column:span 6}
+.g2 img,.g3 img{aspect-ratio:16/8}
+@media(max-width:640px){.g2,.g3{grid-column:span 12}}
+.zweispaltig{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:3rem}
+.zweispaltig>*{min-width:0}
+@media(max-width:760px){.zweispaltig{grid-template-columns:1fr}}
+.merk{display:grid;gap:1rem}
+.merk div{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;padding-bottom:1rem;border-bottom:1px solid rgba(212,179,106,.18)}
+.merk b{font-family:var(--display);font-weight:500;font-size:1.3rem;color:var(--gold);white-space:nowrap}
+.merk span{color:var(--sand)}
 
-.zugang{background:var(--navy);color:var(--auf-navy)}
-.zugang .titel p{color:var(--auf-navy-leise)}
-.zugang .label{color:#e2c478}
-.zugang-gitter{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-.zugang-gitter>*{min-width:0}
-@media(max-width:760px){.zugang-gitter{grid-template-columns:1fr}}
-.dok{margin:0;padding:0;display:grid}
-.dok li{list-style:none;display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(238,244,251,.22)}
-.dok span{color:var(--auf-navy-leise);font-size:.92rem;white-space:nowrap}
-.anfrage{border:1px solid rgba(238,244,251,.35);padding:1.5rem;display:grid;gap:.9rem;align-content:start}
-.anfrage h3{font-size:1.4rem}
-.anfrage p{color:var(--auf-navy-leise)}
-.adresse{font-family:var(--display);font-weight:600;font-size:1.35rem;color:#e2c478;user-select:all;overflow-wrap:anywhere}
-.kopieren{justify-self:start;font:500 .9rem var(--display);letter-spacing:.12em;text-transform:uppercase;background:var(--auf-navy);color:var(--navy);border:0;padding:.65rem 1.2rem;cursor:pointer}
-.klein{font-size:.88rem;color:var(--auf-navy-leise)}
+/* Micellia */
+.micellia{background:var(--nacht-2)}
+.wort{font-family:var(--display);font-size:clamp(3rem,10vw,7rem);letter-spacing:.32em;text-transform:uppercase;color:var(--elfenbein);line-height:1;margin-left:.16em;text-align:center}
+.wort span{display:inline-block;animation:einblend 1.2s both;animation-delay:calc(var(--i)*.09s)}
+@keyframes einblend{from{opacity:0;transform:translateY(.25em);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@media(prefers-reduced-motion:reduce){.wort span{animation:none}}
+.wort-unter{text-align:center;font-style:italic;font-family:var(--display);font-size:1.35rem;color:var(--sand);margin-top:1rem}
+.punkte{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.6rem 2.4rem;margin-top:3.4rem}
+.punkte div{min-width:0;display:grid;gap:.35rem}
+.punkte b{font-weight:400;color:var(--elfenbein);letter-spacing:.06em}
+.punkte p{color:var(--sand);font-size:.98rem}
 
-footer{padding-block:2rem;font-size:.9rem;color:var(--leise);border-top:1px solid var(--linie)}
-footer .wrap{display:grid;gap:.6rem}
+
+.mic-lead{max-width:46rem;margin:3.2rem auto 0;text-align:center;color:var(--sand);font-size:1.12rem}
+.mic-h{font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.3rem);text-align:center;margin-top:4rem}
+.vorteile{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1rem;margin-top:1.8rem}
+.vorteile div{border:1px solid var(--linie);padding:1.1rem .9rem;text-align:center;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:var(--elfenbein);min-width:0}
+.produkte{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.6rem;margin-top:2rem}
+.produkt{background:var(--nacht);border:1px solid var(--linie);min-width:0;display:grid;align-content:start}
+.produkt img{width:100%;aspect-ratio:56/40;object-fit:cover}
+.produkt div{padding:1.2rem 1.2rem 1.4rem;display:grid;gap:.4rem}
+.produkt h3{font-size:1.55rem}
+.produkt p{color:var(--sand);font-size:.96rem}
+.quelle{margin-top:2rem;text-align:center;font-size:.82rem;color:var(--sand)}
+/* Film */
+.film .kino{position:relative;background:#000;border:1px solid var(--linie);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.film video{width:100%;aspect-ratio:1152/493;background:#000}
+.abspann{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem;margin-top:2.2rem;text-align:center}
+.abspann div{display:grid;gap:.3rem;padding:1.4rem 1rem;border:1px solid var(--linie)}
+.abspann .label{color:var(--gold-tief)}
+.abspann strong{font-family:var(--display);font-weight:500;font-size:1.5rem;letter-spacing:.04em}
+
+/* Investieren */
+.tabelle{display:grid;gap:0;border-top:1px solid var(--linie);margin-top:2.4rem}
+.zeile{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid rgba(212,179,106,.2)}
+.zeile h3{font-size:1.45rem}
+.zeile p{color:var(--sand);font-size:.98rem;max-width:40rem}
+.zeile .chf{font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.zeile.total{border-bottom:2px solid var(--gold)}
+.zeile.total h3{color:var(--gold)}
+@media(max-width:520px){.zeile{grid-template-columns:1fr}}
+.hinweis{margin-top:1.6rem;font-size:.85rem;color:var(--sand);max-width:44rem}
+
+/* Kontakt */
+.kontakt{text-align:center;display:grid;gap:1.2rem;justify-items:center}
+.kontakt h2{font-size:clamp(2rem,5vw,3.4rem)}
+.kontakt .mail{font-family:var(--display);font-size:1.6rem;color:var(--gold);letter-spacing:.03em;user-select:all}
+.knopf{display:inline-block;margin-top:.6rem;padding:.9rem 2.2rem;border:1px solid var(--gold);color:var(--elfenbein);text-decoration:none;letter-spacing:.2em;font-size:.78rem;text-transform:uppercase;transition:background .3s}
+.knopf:hover{background:var(--gold);color:var(--nacht)}
+.partner{display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sand)}
+
+footer{border-top:1px solid rgba(212,179,106,.18);padding-block:2rem;font-size:.78rem;color:var(--sand);letter-spacing:.08em}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.sprache{display:flex;border:1px solid var(--linie);flex:none}
+.sprache button{font:400 .78rem var(--text);letter-spacing:.14em;background:none;border:0;color:var(--sand);padding:.4rem .65rem;cursor:pointer}
+.sprache button[aria-pressed="true"]{background:var(--gold);color:var(--nacht)}
+.nav-r{display:flex;align-items:center;gap:1.6rem}
 </style>
 
 <header>
-  <div class="wrap kopf">
-    <a class="marke" href="#start">Inter GeoEnergy AG<small>Mining · Recycling · Precious Metals</small></a>
-    <div class="rechts">
-      <nav aria-label="Navigation">
-        <a href="#kreislauf"><span class="de">Was wir tun</span><span class="en">What we do</span></a>
-        <a href="#projekte"><span class="de">Projekte</span><span class="en">Projects</span></a>
-        <a href="#firma"><span class="de">Unternehmen</span><span class="en">Company</span></a>
-        <a href="#investoren"><span class="de">Investoren</span><span class="en">Investors</span></a>
-      </nav>
-      <div class="sprache" role="group" aria-label="Sprache / Language">
-        <button type="button" id="lang-de" aria-pressed="true">DE</button>
-        <button type="button" id="lang-en" aria-pressed="false">EN</button>
-      </div>
-    </div>
+  <div class="wrap nav">
+    <a class="marke" href="#start">CDB Resort <small>Château de Busset</small></a>
+    <div class="nav-r"><nav aria-label="Hauptnavigation">
+      <a href="#schloss">Das Schloss</a>
+      <a href="#micellia">Micellia</a>
+      <a href="#film">Der Film</a>
+      <a href="#investieren">Investieren</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav><div class="sprache" role="group" aria-label="Sprache / Language"><button type="button" id="lang-de" aria-pressed="true">DE</button><button type="button" id="lang-en" aria-pressed="false">EN</button></div></div>
   </div>
 </header>
 
 <main id="start">
   <div class="hero">
-    <img src="halde.jpg" alt="Luftaufnahme einer Haldenlandschaft mit Absetzbecken">
+    <img src="schloss_a.jpg" alt="Château de Busset im Abendlicht, Luftaufnahme über Park und Hügel der Auvergne" fetchpriority="high">
     <div class="wrap">
-      <p class="label"><span class="de">Schaffhausen · Schweiz · seit 2010</span><span class="en">Schaffhausen · Switzerland · since 2010</span></p>
-      <h1><span class="de">Aus Halden werden Metalle und Baustoffe.</span><span class="en">Turning tailings into metals and building materials.</span></h1>
-      <p class="lead"><span class="de">Die Inter GeoEnergy AG gewinnt wertvolle Metalle aus alten Bergbauhalden. Was übrig bleibt, verarbeitet eine Partnerfirma zu Bauprodukten.</span><span class="en">Inter GeoEnergy AG recovers valuable metals from historical mining tailings. A partner company turns what remains into building products.</span></p>
-      <div class="fakten">
-        <div><b>2,5 Mio. t</b><span class="de">Haldenmaterial bei Novi Sad, Verträge in Verhandlung</span><span class="en">of tailings near Novi Sad, contracts under negotiation</span></div>
-        <div><b><span class="de">Ohne Cyanid</span><span class="en">No cyanide</span></b><span class="de">Aufbereitung mit Wasser und Schwerkraft</span><span class="en">Processing with water and gravity</span></div>
-        <div><b><span class="de">2 Länder</span><span class="en">2 countries</span></b><span class="de">Serbien in Arbeit, Indonesien in der Analyse</span><span class="en">Serbia under way, Indonesia in analysis</span></div>
-      </div>
+      <p class="label">Château de Busset · Royal Organic Health Resort</p>
+      <h1>Wo Geschichte <em>Zukunft</em> wird.</h1>
+      <p class="drei">Ein Schloss. Ein Produkt. Ein Kinofilm.</p>
+      <p class="ort"><span>Vichy · Auvergne · Frankreich</span><span>Health Resort · Saisonstart 2027</span><span>CDB Resort AG, Zürich</span></p>
     </div>
   </div>
 
-  <section id="kreislauf">
+  <section id="idee">
     <div class="wrap">
-      <div class="titel">
-        <p class="label"><span class="de">Was wir tun</span><span class="en">What we do</span></p>
-        <h2><span class="de">Eine Halde, drei Schritte.</span><span class="en">One tailings site, three steps.</span></h2>
+      <div class="kopf">
+        <p class="label">Die Idee</p>
+        <h2>Drei Geschichten, die sich gegenseitig stärken.</h2>
+        <p class="lead">Ein Schloss mit Park als Bühne. Ein Naturprodukt mit klarem Geschäftsmodell. Und ein Kinofilm, der beides auf die grosse Leinwand bringt.</p>
       </div>
-      <ol class="kreislauf">
-        <li><h3><span class="de">Metalle gewinnen</span><span class="en">Recover metals</span></h3><p><span class="de">Wir waschen und sieben das Haldenmaterial vor Ort und gewinnen ein Konzentrat mit Gold und weiteren Metallen.</span><span class="en">We wash and screen the material on site and produce a concentrate containing gold and other metals.</span></p></li>
-        <li><h3><span class="de">Rest verwerten</span><span class="en">Use the remainder</span></h3><p><span class="de">Das mineralische Restmaterial dient nach erfolgter Eignungsprüfung als Rohstoff für Polymerbeton-Bauprodukte (Konzept GreenCycle).</span><span class="en">Once tested for suitability, the remaining mineral material serves as raw material for polymer concrete building products (GreenCycle concept).</span></p></li>
-        <li><h3><span class="de">Halde verkleinern</span><span class="en">Shrink the heap</span></h3><p><span class="de">Je mehr Material verwertet wird, desto weniger muss gelagert und überwacht werden. Das entlastet Betreiber und Umwelt.</span><span class="en">The more material is used, the less has to be stored and monitored. That relieves operators and the environment.</span></p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="projekte" class="band">
-    <div class="wrap">
-      <div class="titel">
-        <p class="label"><span class="de">Projekte</span><span class="en">Projects</span></p>
-        <h2><span class="de">Haldenprojekt Novi Sad, Serbien</span><span class="en">Novi Sad tailings project, Serbia</span></h2>
-        <p><span class="de">Historische Abraumhalden aus der Eisenerzgewinnung. Wir starten klein, messen genau und bauen erst dann aus.</span><span class="en">Historical tailings from iron ore mining. We start small, measure carefully and only then scale up.</span></p>
-      </div>
-      <div class="projekt">
-        <div class="text">
-          <dl>
-            <div><dt><span class="de">Material</span><span class="en">Material</span></dt><dd><span class="de">Rund 2,5 Mio. Tonnen, Abbau- und Abnahmeverträge in Verhandlung</span><span class="en">About 2.5 million tonnes; extraction and offtake contracts under negotiation</span></dd></div>
-            <div><dt><span class="de">Pilotbetrieb</span><span class="en">Pilot run</span></dt><dd><span class="de">Vier Wochen mit mobiler Wasch- und Siebanlage, ca. 2 t pro Stunde, direkt an den Halden (geplant)</span><span class="en">Four weeks with a mobile washing and screening unit, approx. 2 t per hour, directly at the tailings (planned)</span></dd></div>
-            <div><dt><span class="de">Start</span><span class="en">Start-up</span></dt><dd><span class="de">400 t pro Tag</span><span class="en">400 t per day</span></dd></div>
-            <div><dt><span class="de">Ausbau</span><span class="en">Expansion</span></dt><dd><span class="de">bis 2'000 t pro Tag, ausgelegt auf Basis der Pilotdaten</span><span class="en">up to 2,000 t per day, designed on the basis of the pilot data</span></dd></div>
-            <div><dt><span class="de">Eisenmaterial</span><span class="en">Iron material</span></dt><dd><span class="de">Separates Vorkommen mit akkreditiertem Prüfbericht Nr. 373/26 (RZ Technical Control Skopje, ISO/IEC 17025)</span><span class="en">Separate deposit with accredited test report no. 373/26 (RZ Technical Control Skopje, ISO/IEC 17025)</span></dd></div>
-          </dl>
-          <h3 style="margin-top:1rem"><span class="de">Das Verfahren</span><span class="en">The process</span></h3>
-          <ul class="kette">
-            <li><span class="de">Aufgabe</span><span class="en">Feed</span></li><li><span class="de">Sieb</span><span class="en">Screen</span></li><li><span class="de">Waschen</span><span class="en">Wash</span></li><li><span class="de">Klassierung</span><span class="en">Classification</span></li><li>Jig</li><li><span class="de">Zentrifuge</span><span class="en">Centrifugal concentrator</span></li><li><span class="de">Konzentrat</span><span class="en">Concentrate</span></li>
-          </ul>
-          <h3 style="margin-top:1rem"><span class="de">Erste Laborwerte</span><span class="en">First lab values</span></h3>
-          <div class="tab">
-            <table>
-              <thead><tr><th>Element</th><th><span class="de">Grobes Material</span><span class="en">Coarse material</span></th><th><span class="de">Feines Material</span><span class="en">Fine material</span></th></tr></thead>
-              <tbody>
-                <tr><td><span class="de">Gold</span><span class="en">Gold</span> (Au)</td><td>1 g/t</td><td>3 g/t</td></tr>
-                <tr><td><span class="de">Silber</span><span class="en">Silver</span> (Ag)</td><td>83 g/t</td><td>85 g/t</td></tr>
-                <tr><td>Palladium (Pd)</td><td>&lt; 1 g/t</td><td>15 g/t</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="hinweis"><span class="de">Die Werte stammen aus Einzelproben und sind nicht repräsentativ für die ganze Halde. Der Pilotbetrieb und ein akkreditiertes Labor liefern die verbindlichen Zahlen.</span><span class="en">These values come from individual samples and are not representative of the whole site. The pilot run and an accredited laboratory will provide the binding figures.</span></p>
+      <div class="saeulen">
+        <div class="saeule">
+          <span class="num">I</span>
+          <h3>Das Schloss</h3>
+          <p>Château de Busset bei Vichy: Türme, Park, Pool und ein weiter Blick über die Hügel der Auvergne. Ab der Saison 2027 ein Royal Organic Health Resort.</p>
         </div>
-        <div style="display:grid;gap:1.5rem">
-          <figure><img src="anlage.jpg" alt="Mobile Waschanlage auf einem Anhänger in einer Werkhalle"><figcaption><span class="de">Mobile Waschanlage auf dem Anhänger, wie sie für den Pilotbetrieb vorgesehen ist.</span><span class="en">Mobile washing unit on a trailer, as planned for the pilot run.</span></figcaption></figure>
-          <figure><img src="standort.jpg" alt="Abgedeckte Materialhalden hinter einem Werkstor"><figcaption><span class="de">Materialhalden vor Ort.</span><span class="en">Material heaps on site.</span></figcaption></figure>
+        <div class="saeule">
+          <span class="num">II</span>
+          <h3>Das Produkt</h3>
+          <p>Micellia stellt wasserlösliche Nahrungsergänzung aus Pflanzenkraft her, Swiss Made. Direkter Online-Vertrieb und ein Sortiment, das wächst.</p>
         </div>
-      </div>
-
-      <div class="weitere">
-        <article>
-          <p class="status"><span class="de">In der Analyse</span><span class="en">In analysis</span></p>
-          <h3><span class="de">Indonesien</span><span class="en">Indonesia</span></h3>
-          <p><span class="de">Wir beginnen, Material aus Indonesien zu analysieren. Ausgebaut wird erst, wenn Serbien stabil läuft, vorsichtig und mit soliden Partnern.</span><span class="en">We are beginning to analyse material from Indonesia. We expand only once operations in Serbia run stably, cautiously and with solid partners.</span></p>
-        </article>
-        <article>
-          <p class="status"><span class="de">Beteiligung im Erwerb</span><span class="en">Acquisition in progress</span></p>
-          <h3><span class="de">Raffinerie Sirius, Bahrain</span><span class="en">Sirius refinery, Bahrain</span></h3>
-          <p><span class="de">Über die Tochter Sirius Assets WLL erwirbt die IGE 60 % der Sirius Commodities BSC (c). Der Vollzug steht noch aus.</span><span class="en">Through its subsidiary Sirius Assets WLL, IGE is acquiring 60% of Sirius Commodities BSC (c). Completion is pending.</span></p>
-        </article>
-        <article>
-          <p class="status"><span class="de">Konzept</span><span class="en">Concept</span></p>
-          <h3>GreenCycle</h3>
-          <p><span class="de">Aus dem gewaschenen Restmaterial entstehen Polymerbeton-Bauteile für Strassen- und Hochbau. Eignung und Umfang werden je Projekt nachgewiesen.</span><span class="en">Washed residual material becomes polymer concrete elements for road and building construction. Suitability and scope are demonstrated project by project.</span></p>
-        </article>
+        <div class="saeule">
+          <span class="num">III</span>
+          <h3>Der Film</h3>
+          <p>DRAGON RIDERS, ein internationaler Kinofilm. Das Schloss und Micellia sind im Film zu sehen. Die CDB Resort AG steht als Co-Produzentin im Abspann.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="firma">
+  <div class="wrap"><div class="trenner"></div></div>
+
+  <section id="schloss">
     <div class="wrap">
-      <div class="titel">
-        <p class="label"><span class="de">Unternehmen</span><span class="en">Company</span></p>
-        <h2>Inter GeoEnergy AG</h2>
-        <p><span class="de">Schweizer Beteiligungs- und Handelsgesellschaft für die Rohstoffprojekte der Gruppe.</span><span class="en">Swiss holding and trading company for the group's raw material projects.</span></p>
+      <div class="kopf">
+        <p class="label">Das Schloss</p>
+        <h2>Château de Busset</h2>
+        <p class="lead">Ein historisches Schloss bei Vichy in der Auvergne, eingebettet in einen weitläufigen Park. Ab 2027 öffnet es als Royal Organic Health Resort.</p>
       </div>
-      <dl>
-        <div><dt><span class="de">Sitz</span><span class="en">Registered office</span></dt><dd>Mühlenstrasse 70, 8200 Schaffhausen</dd></div>
-        <div><dt><span class="de">Handelsregister</span><span class="en">Commercial register</span></dt><dd>CHE-115.692.298 · <span class="de">eingetragen seit 19.05.2010</span><span class="en">registered since 19 May 2010</span></dd></div>
-        <div><dt><span class="de">Aktienkapital</span><span class="en">Share capital</span></dt><dd>CHF 200'000, <span class="de">voll liberiert</span><span class="en">fully paid in</span></dd></div>
-        <div><dt><span class="de">Verwaltungsrat</span><span class="en">Board of directors</span></dt><dd>Pierre Schaerer</dd></div>
-        <div><dt>Investor Relations</dt><dd>Beat Martin Dutli, CDB RESORT AG, Zürich</dd></div>
-        <div><dt><span class="de">Aktionärin</span><span class="en">Shareholder</span></dt><dd>CDB RESORT AG, Restelbergstrasse 80, 8044 Zürich</dd></div>
-      </dl>
+      <div class="galerie">
+        <figure class="g1"><img src="schloss_b.jpg" alt="Château de Busset von oben, Park und Zufahrt"><figcaption>Schloss und Park</figcaption></figure>
+        <figure class="g2"><img src="schloss_c.jpg" alt="Die Türme des Château de Busset über den Baumkronen"><figcaption>Die Türme</figcaption></figure>
+        <figure class="g3"><img src="schloss_d.jpg" alt="Château de Busset im Abendlicht mit Blick ins Tal"><figcaption>Blick ins Tal</figcaption></figure>
+      </div>
+      <div class="zweispaltig">
+        <p class="schmal" style="color:var(--sand)">Das Château de Busset ist der Mittelpunkt von CDB Resort. Mit gezielten Investitionen wird das Schloss aufgewertet und als Health Resort positioniert: ein Ort, an dem Gäste zur Ruhe kommen und neue Kraft schöpfen. Saisonstart ist 2027. Die Unterlagen zur Aufwertung liegen vor.</p>
+        <div class="merk">
+          <div><b>Park</b><span>Weitläufige Anlage mit altem Baumbestand und freiem Blick über die Hügel</span></div>
+          <div><b>Türme</b><span>Die Silhouette des Schlosses, abends im goldenen Licht</span></div>
+          <div><b>Resort</b><span>Royal Organic Health Resort, Saisonstart 2027</span></div>
+          <div><b>Film</b><span>Das Schloss ist im Kinofilm DRAGON RIDERS zu sehen</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="investoren" class="zugang">
+  <section id="micellia" class="micellia">
     <div class="wrap">
-      <div class="titel">
-        <p class="label"><span class="de">Investoren-Bereich</span><span class="en">Investor area</span></p>
-        <h2><span class="de">Unterlagen für qualifizierte Investoren</span><span class="en">Documents for qualified investors</span></h2>
-        <p><span class="de">Die Beteiligung läuft über die CDB RESORT AG. Die vollständigen Unterlagen erhalten Sie persönlich und mit eigenem Zugang.</span><span class="en">Participation is handled through CDB RESORT AG. You receive the complete documents personally and with your own access.</span></p>
+      <p class="label" style="text-align:center;margin-bottom:1.6rem">Das Produkt</p>
+      <h2 class="wort" aria-label="Micellia"><span style="--i:0">M</span><span style="--i:1">I</span><span style="--i:2">C</span><span style="--i:3">E</span><span style="--i:4">L</span><span style="--i:5">L</span><span style="--i:6">I</span><span style="--i:7">A</span></h2>
+      <p class="wort-unter">Wasserlösliche Nahrungsergänzung aus Pflanzenkraft. Swiss Made. Weniger ist mehr.</p>
+      <div class="punkte">
+        <div><b>Technologie</b><p>Das patentierte Verfahren Vicellia&trade; macht natürliche Öle wasserlöslich. Der Körper nimmt die Wirkstoffe deutlich besser auf.</p></div>
+        <div><b>Swiss Made</b><p>Rein pflanzliche Wirkstoffe, hergestellt nach Schweizer Qualität. Lizenzen und behördliche Nachweise liegen vor.</p></div>
+        <div><b>Ausgezeichnet</b><p>Das Verfahren wurde mit dem «World CPhI Excellence Formulation Pharma Award» ausgezeichnet.</p></div>
+        <div><b>Sortiment</b><p>Heute 5 Produkte im Markt. Ausbau auf bis zu 100 möglich.</p></div>
+        <div><b>Vertrieb</b><p>Direkter Online-Vertrieb mit attraktiver Marge.</p></div>
+        <div><b>Führung</b><p>Direktorin Lucia, stark in Marketing und Online-Auftritt. Das ganze Team ist persönlich bekannt.</p></div>
       </div>
-      <div class="zugang-gitter">
-        <ul class="dok">
-          <li><span class="de">Investorendokumentation</span><span class="en">Investor documentation</span><span>DE · EN</span></li>
-          <li><span class="de">Investitionsvertrag</span><span class="en">Investment agreement</span><span>DE</span></li>
-          <li><span class="de">Handelsregisterauszug IGE</span><span class="en">Commercial register extract IGE</span><span>PDF</span></li>
-          <li><span class="de">Handelsregisterauszug CDB RESORT AG</span><span class="en">Commercial register extract CDB RESORT AG</span><span>PDF</span></li>
-          <li><span class="de">Projektstudie Haldenverwertung</span><span class="en">Project study on tailings utilisation</span><span>EN</span></li>
-        </ul>
-        <div class="anfrage">
-          <h3><span class="de">Zugang anfragen</span><span class="en">Request access</span></h3>
-          <p><span class="de">Schreiben Sie uns kurz, wer Sie sind. Wir melden uns persönlich bei Ihnen.</span><span class="en">Tell us briefly who you are. We will get back to you personally.</span></p>
-          <p class="adresse" id="mail">beat.dutli@gmail.com</p>
-          <button type="button" class="kopieren" id="kopieren"><span class="de">Adresse kopieren</span><span class="en">Copy address</span></button>
-          <p class="klein">Beat Martin Dutli · +41 79 320 72 52</p>
+      <p class="mic-lead">Die neue Generation von Nahrungsergänzungsmitteln. Viele pflanzliche Wirkstoffe lösen sich nicht in Wasser. Micellia macht sie wasserlöslich, damit der Körper sie gut aufnehmen kann. Verwendet werden ausschliesslich pflanzliche Wirkstoffe aus kontrollierten, rein natürlichen Quellen.</p>
+      <h3 class="mic-h">Was Micellia auszeichnet</h3>
+      <div class="vorteile">
+        <div>Wasserlöslich</div><div>Optimierte Bioverfügbarkeit</div><div>Patentierte Technologie</div><div>Schnelle Absorption</div><div>Geringere Dosis</div>
+      </div>
+      <h3 class="mic-h">Drei Produkte, drei Bereiche</h3>
+      <div class="produkte">
+        <div class="produkt"><img src="prod1.jpg" alt="Micellia C.O.C Vitamin, Flasche und Verpackung"><div><span class="label">Immunsystem</span><h3>C.O.C Vitamin</h3><p>Mit Curcuma, Weihrauch und Vitamin C. Flasche mit 30 ml für 30 Tagesdosen.</p></div></div>
+        <div class="produkt"><img src="prod2.jpg" alt="Micellia Curcuma Top, Flasche und Verpackung"><div><span class="label">Muskeln, Gelenke und Knochen</span><h3>Curcuma Top</h3><p>Auf der Basis von Curcuma. Flasche mit 30 ml für 30 Tagesdosen.</p></div></div>
+        <div class="produkt"><img src="prod3.jpg" alt="Micellia Vigor Ammino, Flasche und Verpackung"><div><span class="label">Stoffwechsel</span><h3>Vigor Ammino</h3><p>Mit Guaraná. Flasche mit 30 ml für 30 Tagesdosen.</p></div></div>
+      </div>
+      <p class="quelle">Angaben gemäss micellia.com. Nahrungsergänzungsmittel sind kein Ersatz für eine abwechslungsreiche Ernährung.</p>
+
+    </div>
+  </section>
+
+  <section id="film" class="film">
+    <div class="wrap">
+      <div class="kopf">
+        <p class="label">Der Film</p>
+        <h2>DRAGON RIDERS</h2>
+        <p class="lead">Ein internationaler Kinofilm. Am Ende der Reise finden sich alle wieder: im geheimnisvollen Château de Busset.</p>
+      </div>
+      <div class="kino">
+        <video controls preload="metadata" poster="poster.jpg" playsinline>
+          <source src="teaser.mp4" type="video/mp4">
+          Dein Browser kann dieses Video nicht abspielen.
+        </video>
+      </div>
+      <div class="abspann">
+        <div><span class="label">Executive Producer</span><strong>Tomstone Company TV</strong></div>
+        <div><span class="label">Co-Produzent</span><strong>CDB Resort AG · B. M. Dutli</strong></div>
+        <div><span class="label">Im Film</span><strong>Château de Busset · Micellia</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="trenner"></div></div>
+
+  <section id="investieren">
+    <div class="wrap">
+      <div class="kopf">
+        <p class="label">Investieren</p>
+        <h2>Drei Bereiche. Eine Geschichte.</h2>
+        <p class="lead">Jeder Bereich steht für sich. Zusammen ergeben sie ein Ganzes, das sichtbar wird: am Schloss, im Regal und auf der Leinwand.</p>
+      </div>
+      <div class="tabelle">
+        <div class="zeile">
+          <div><h3>A · Aufwertung Château de Busset</h3><p>Gezielte Aufwertung und stärkere Positionierung des Schlosses. Die Unterlagen liegen vor.</p></div>
+          <span class="chf">CHF 100'000</span>
+        </div>
+        <div class="zeile">
+          <div><h3>B · Vertrieb Micellia</h3><p>Aufbau und Weiterentwicklung des Online-Vertriebs der Micellia-Produkte.</p></div>
+          <span class="chf">CHF 50'000</span>
+        </div>
+        <div class="zeile">
+          <div><h3>C · Film-Co-Produktion</h3><p>Beteiligung als Co-Produzent am Kinofilm DRAGON RIDERS. Schloss und Micellia im Film, Nennung im Abspann und in der Werbung.</p></div>
+          <span class="chf">CHF 50'000</span>
+        </div>
+        <div class="zeile total">
+          <h3>Gesamtinvestition</h3>
+          <span class="chf">CHF 200'000</span>
         </div>
       </div>
-      <p class="klein" style="margin-top:2rem;max-width:52rem"><span class="de">Diese Seite ist kein öffentliches Angebot und kein Prospekt. Unterlagen gehen ausschliesslich an qualifizierte Investoren im Sinne des schweizerischen Rechts. Investitionen in Rohstoffprojekte sind mit erheblichen Risiken verbunden, bis hin zum Totalverlust.</span><span class="en">This page is neither a public offer nor a prospectus. Documents are provided exclusively to qualified investors within the meaning of Swiss law. Investments in raw material projects involve substantial risks, up to and including total loss.</span></p>
+      <p class="hinweis">Alle Angaben sind interne Planwerte von CDB Resort und ersetzen keine Prüfung. Detaillierte Unterlagen auf Anfrage.</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap kontakt">
+      <p class="label">Kontakt</p>
+      <h2>Lass uns reden.</h2>
+      <p class="schmal" style="color:var(--sand)">Beat Dutli, CDB Resort AG, beantwortet Fragen zu Schloss, Micellia und der Film-Beteiligung persönlich.</p>
+      <p class="mail">beat.dutli@gmail.com</p>
+      <a class="knopf" href="mailto:beat.dutli@gmail.com?subject=CDB%20Resort">E-Mail schreiben</a>
+      <div class="partner"><span>CDB Resort</span><span>Micellia</span><span>Tomstone Company TV</span></div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <p>Inter GeoEnergy AG · Mühlenstrasse 70 · 8200 Schaffhausen · CHE-115.692.298</p>
-    <p><span class="de">Alle Angaben zu Mengen und Gehalten sind interne, nicht unabhängig geprüfte Schätzungen der Geschäftsleitung.</span><span class="en">All figures on quantities and grades are internal management estimates that have not been independently verified.</span></p>
+    <span>CDB Resort AG, Zürich · Château de Busset · Vichy, Auvergne</span>
+    <span>Entwurf · Oktober 2026 · In Zusammenarbeit mit Tomstone Company TV</span>
   </div>
 </footer>
-
 <script>
-(function(){
-  var root=document.documentElement,de=document.getElementById('lang-de'),en=document.getElementById('lang-en');
-  function setze(l){root.setAttribute('data-lang',l);root.lang=l;de.setAttribute('aria-pressed',l==='de');en.setAttribute('aria-pressed',l==='en');try{localStorage.setItem('ige-lang',l)}catch(e){}}
-  var l='de';try{l=localStorage.getItem('ige-lang')||'de'}catch(e){}
-  if(location.hash==='#en')l='en';
-  setze(l==='en'?'en':'de');
-  de.addEventListener('click',function(){setze('de')});en.addEventListener('click',function(){setze('en')});
-  var k=document.getElementById('kopieren');
-  k.addEventListener('click',function(){
-    var t=document.getElementById('mail').textContent;
-    function ok(){k.textContent=root.getAttribute('data-lang')==='en'?'Copied':'Kopiert'}
-    try{navigator.clipboard.writeText(t).then(ok,function(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)})}catch(e){}
-  });
-})();
+(function(){var T={"Das Schloss": "The Château", "Der Film": "The Film", "Investieren": "Invest", "Kontakt": "Contact", "Ein Schloss. Ein Produkt. Ein Kinofilm.": "A château. A product. A feature film.", "Vichy · Auvergne · Frankreich": "Vichy · Auvergne · France", "Health Resort · Saisonstart 2027": "Health Resort · Opening season 2027", "CDB Resort AG, Zürich": "CDB Resort AG, Zurich", "Die Idee": "The Idea", "Drei Geschichten, die sich gegenseitig stärken.": "Three stories that strengthen one another.", "Ein Schloss mit Park als Bühne. Ein Naturprodukt mit klarem Geschäftsmodell. Und ein Kinofilm, der beides auf die grosse Leinwand bringt.": "A château and its park as the stage. A natural product with a clear business model. And a feature film that brings both to the big screen.", "Château de Busset bei Vichy: Türme, Park, Pool und ein weiter Blick über die Hügel der Auvergne. Ab der Saison 2027 ein Royal Organic Health Resort.": "Château de Busset near Vichy: towers, park, pool and a wide view across the hills of the Auvergne. From the 2027 season a Royal Organic Health Resort.", "Das Produkt": "The Product", "Micellia stellt wasserlösliche Nahrungsergänzung aus Pflanzenkraft her, Swiss Made. Direkter Online-Vertrieb und ein Sortiment, das wächst.": "Micellia makes water-soluble, plant-based food supplements, Swiss Made. Direct online sales and a growing range.", "DRAGON RIDERS, ein internationaler Kinofilm. Das Schloss und Micellia sind im Film zu sehen. Die CDB Resort AG steht als Co-Produzentin im Abspann.": "DRAGON RIDERS, an international feature film. The château and Micellia appear in the film. CDB Resort AG is named as co-producer in the credits.", "Ein historisches Schloss bei Vichy in der Auvergne, eingebettet in einen weitläufigen Park. Ab 2027 öffnet es als Royal Organic Health Resort.": "A historic château near Vichy in the Auvergne, set in extensive parkland. From 2027 it opens as a Royal Organic Health Resort.", "Schloss und Park": "Château and park", "Die Türme": "The towers", "Blick ins Tal": "View into the valley", "Das Château de Busset ist der Mittelpunkt von CDB Resort. Mit gezielten Investitionen wird das Schloss aufgewertet und als Health Resort positioniert: ein Ort, an dem Gäste zur Ruhe kommen und neue Kraft schöpfen. Saisonstart ist 2027. Die Unterlagen zur Aufwertung liegen vor.": "Château de Busset is the heart of CDB Resort. Targeted investment will upgrade the château and position it as a health resort: a place where guests come to rest and regain their strength. The first season starts in 2027. The documents for the upgrade are available.", "Park": "Park", "Türme": "Towers", "Resort": "Resort", "Film": "Film", "Weitläufige Anlage mit altem Baumbestand und freiem Blick über die Hügel": "Extensive grounds with mature trees and an open view across the hills", "Die Silhouette des Schlosses, abends im goldenen Licht": "The silhouette of the château, golden in the evening light", "Royal Organic Health Resort, Saisonstart 2027": "Royal Organic Health Resort, opening season 2027", "Das Schloss ist im Kinofilm DRAGON RIDERS zu sehen": "The château appears in the feature film DRAGON RIDERS", "Wasserlösliche Nahrungsergänzung aus Pflanzenkraft. Swiss Made. Weniger ist mehr.": "Water-soluble, plant-based food supplements. Swiss Made. Less is more.", "Technologie": "Technology", "Das patentierte Verfahren Vicellia™ macht natürliche Öle wasserlöslich. Der Körper nimmt die Wirkstoffe deutlich besser auf.": "The patented Vicellia™ process makes natural oils water-soluble. The body absorbs the active ingredients considerably better.", "Rein pflanzliche Wirkstoffe, hergestellt nach Schweizer Qualität. Lizenzen und behördliche Nachweise liegen vor.": "Purely plant-based active ingredients, made to Swiss quality standards. Licences and regulatory documentation are in place.", "Ausgezeichnet": "Award-winning", "Das Verfahren wurde mit dem «World CPhI Excellence Formulation Pharma Award» ausgezeichnet.": "The process received the “World CPhI Excellence Formulation Pharma Award”.", "Sortiment": "Range", "Heute 5 Produkte im Markt. Ausbau auf bis zu 100 möglich.": "5 products on the market today. Expansion to as many as 100 is possible.", "Vertrieb": "Sales", "Direkter Online-Vertrieb mit attraktiver Marge.": "Direct online sales with an attractive margin.", "Führung": "Management", "Direktorin Lucia, stark in Marketing und Online-Auftritt. Das ganze Team ist persönlich bekannt.": "Director Lucia, strong in marketing and online presence. We know the whole team personally.", "Die neue Generation von Nahrungsergänzungsmitteln. Viele pflanzliche Wirkstoffe lösen sich nicht in Wasser. Micellia macht sie wasserlöslich, damit der Körper sie gut aufnehmen kann. Verwendet werden ausschliesslich pflanzliche Wirkstoffe aus kontrollierten, rein natürlichen Quellen.": "The new generation of food supplements. Many plant-based active ingredients do not dissolve in water. Micellia makes them water-soluble so that the body can absorb them well. Only plant-based active ingredients from controlled, purely natural sources are used.", "Was Micellia auszeichnet": "What sets Micellia apart", "Wasserlöslich": "Water-soluble", "Optimierte Bioverfügbarkeit": "Optimised bioavailability", "Patentierte Technologie": "Patented technology", "Schnelle Absorption": "Fast absorption", "Geringere Dosis": "Lower dose", "Drei Produkte, drei Bereiche": "Three products, three areas", "Immunsystem": "Immune system", "Mit Curcuma, Weihrauch und Vitamin C. Flasche mit 30 ml für 30 Tagesdosen.": "With turmeric, frankincense and vitamin C. 30 ml bottle for 30 daily doses.", "Muskeln, Gelenke und Knochen": "Muscles, joints and bones", "Auf der Basis von Curcuma. Flasche mit 30 ml für 30 Tagesdosen.": "Based on turmeric. 30 ml bottle for 30 daily doses.", "Stoffwechsel": "Metabolism", "Mit Guaraná. Flasche mit 30 ml für 30 Tagesdosen.": "With guaraná. 30 ml bottle for 30 daily doses.", "Angaben gemäss micellia.com. Nahrungsergänzungsmittel sind kein Ersatz für eine abwechslungsreiche Ernährung.": "Information according to micellia.com. Food supplements are not a substitute for a varied diet.", "Ein internationaler Kinofilm. Am Ende der Reise finden sich alle wieder: im geheimnisvollen Château de Busset.": "An international feature film. At the end of the journey they all find each other again: in the mysterious Château de Busset.", "Co-Produzent": "Co-producer", "Im Film": "In the film", "Drei Bereiche. Eine Geschichte.": "Three areas. One story.", "Jeder Bereich steht für sich. Zusammen ergeben sie ein Ganzes, das sichtbar wird: am Schloss, im Regal und auf der Leinwand.": "Each area stands on its own. Together they form a whole that becomes visible: at the château, on the shelf and on the screen.", "A · Aufwertung Château de Busset": "A · Upgrading Château de Busset", "Gezielte Aufwertung und stärkere Positionierung des Schlosses. Die Unterlagen liegen vor.": "Targeted upgrading and stronger positioning of the château. The documents are available.", "B · Vertrieb Micellia": "B · Micellia sales", "Aufbau und Weiterentwicklung des Online-Vertriebs der Micellia-Produkte.": "Building and developing online sales of the Micellia products.", "C · Film-Co-Produktion": "C · Film co-production", "Beteiligung als Co-Produzent am Kinofilm DRAGON RIDERS. Schloss und Micellia im Film, Nennung im Abspann und in der Werbung.": "Participation as co-producer in the feature film DRAGON RIDERS. Château and Micellia in the film, named in the credits and in the advertising.", "Gesamtinvestition": "Total investment", "Alle Angaben sind interne Planwerte von CDB Resort und ersetzen keine Prüfung. Detaillierte Unterlagen auf Anfrage.": "All figures are internal planning values of CDB Resort and do not replace an independent review. Detailed documents on request.", "Lass uns reden.": "Let's talk.", "Beat Dutli, CDB Resort AG, beantwortet Fragen zu Schloss, Micellia und der Film-Beteiligung persönlich.": "Beat Dutli, CDB Resort AG, answers questions about the château, Micellia and the film participation personally.", "E-Mail schreiben": "Write an e-mail", "CDB Resort AG, Zürich · Château de Busset · Vichy, Auvergne": "CDB Resort AG, Zurich · Château de Busset · Vichy, Auvergne", "Entwurf · Oktober 2026 · In Zusammenarbeit mit Tomstone Company TV": "Draft · October 2026 · In collaboration with Tomstone Company TV", "Dein Browser kann dieses Video nicht abspielen.": "Your browser cannot play this video."};var H1={de:'Wo Geschichte <em>Zukunft</em> wird.',en:'Where history becomes <em>the future</em>.'};
+var nodes=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n;
+while(n=w.nextNode()){var p=n.parentNode;if(!p||/^(SCRIPT|STYLE)$/.test(p.nodeName)||p.closest('h1'))continue;var k=n.nodeValue.trim();if(k&&T[k])nodes.push([n,n.nodeValue,n.nodeValue.replace(k,T[k])]);}
+var de=document.getElementById('lang-de'),en=document.getElementById('lang-en'),h1=document.querySelector('h1');
+function setze(l){nodes.forEach(function(x){x[0].nodeValue=l==='en'?x[2]:x[1]});h1.innerHTML=H1[l];document.documentElement.lang=l;de.setAttribute('aria-pressed',l==='de');en.setAttribute('aria-pressed',l==='en');try{localStorage.setItem('cdb-lang',l)}catch(e){}}
+var l='de';try{l=localStorage.getItem('cdb-lang')||'de'}catch(e){}if(location.hash==='#en')l='en';if(l==='en')setze('en');
+de.addEventListener('click',function(){setze('de')});en.addEventListener('click',function(){setze('en')});})();
 </script>
 
 </body></html>
